@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Including external CSS file which is in the "css" folder -->
+  <link href="Style.css" rel="Stylesheet">
+  <title>Calculator</title>
+</head>
+
+<body>
+  
+  <h1>JavaScript Arithmetic Operator</h1>
+ 
+  <form method="get" action="">
+    <!-- first fieldset -->
+    <fieldset>
+      <legend>My Calculator</legend>
+      <!-- text area to show result -->
+      <textarea name="resultarea" id="resultArea" cols="40" rows="6"></textarea>
+    </fieldset>
+
+    <!-- second fieldset -->
+    <fieldset>
+      <legend>Input</legend>
+      <!-- label text -->
+      <label for="operands">Operands:</label>
+      <!-- Operands input number fields -->
+      <input type="number" name="firstoperand" id="firstOperand">
+      <input type="number" name="secondoperand" id="secondOperand">
+      <br><br>
+      <label for="operator">Operator:</label>
+      <!-- Operator buttons -->
+      <button id="addition">+</button>
+      <button id="multiplication">&times;</button>
+      <button id="division">:</button>
+      <!-- reset/clear button -->
+      <input type="reset" value="clear" id="clr">
+    </fieldset>
+  </form>
+
+ 
+  <script>
+    // add eventlistener to addition (+) operator button
+    
+    document.getElementById("addition").addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Get value of first operand in input and assign to a variable
+      let firstOperandValue = document.getElementById("firstOperand").value;
+      // Get value of second operand in input and assign to a variable
+      let secondOperandValue = document.getElementById("secondOperand").value;
+
+      // calculate sum
+      let sumValue = Number(firstOperandValue) + Number(secondOperandValue);
+
+      // display sum result 
+      document.querySelector("textarea").value = `${firstOperandValue} + ${secondOperandValue} = ${sumValue}`;
+    });
+
+    // add eventlistener to multiplication (x) operator button
+        document.getElementById("multiplication").addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Get value of first operand in input and assign to a variable
+      let firstOperandValue = document.getElementById("firstOperand").value;
+      // Get value of second operand in input and assign to a variable
+      let secondOperandValue = document.getElementById("secondOperand").value;
+
+      // calculate multiplication
+      let multiplicationValue = firstOperandValue * secondOperandValue;
+
+      // display multiplication result in text-area with operands values- 
+      document.querySelector("textarea").value = `${firstOperandValue} * ${secondOperandValue} = ${multiplicationValue}`;
+    });
+
+    // add eventlistener to division (:) operator button
+   
+    document.getElementById("division").addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Get value of first operand in input and assign to a variable
+      let firstOperandValue = document.getElementById("firstOperand").value;
+      // Get value of second operand in input and assign to a variable
+      let secondOperandValue = document.getElementById("secondOperand").value;
+
+      // calculate division
+      let divisionValue = firstOperandValue / secondOperandValue;
+
+      // display division result in text-area with operands values- 
+      document.querySelector("textarea").value = `${firstOperandValue} / ${secondOperandValue} = ${divisionValue}`;
+    });
+  </script>
+</body>
+
+</html>

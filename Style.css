@@ -1,0 +1,32 @@
+/* style rules for fieldsets  */
+fieldset {
+    padding: 1.5rem;
+    margin: 1rem;
+    width: 400px;
+    background-color: rgb(107, 139, 65) ;
+  }
+  
+  /* style rules for legend texts  */
+  legend {
+    background-color:rgb(218, 206, 206);
+    color: rgb(61, 99, 121);
+    font-weight: 400;
+    padding: 2px 8px;
+  }
+  
+  /* style rules for Operand input fields  */
+  #firstOperand, #secondOperand {
+    width: 110px;
+    background-color: rgb(131, 192, 202)
+  }
+  
+  /* style rules for operator buttons  */
+  button:first-of-type {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  button:not(first-of-type), #clr {
+    margin-left: 6px;
+    cursor: pointer;
+  }
